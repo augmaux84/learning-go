@@ -8,7 +8,6 @@ func main() {
 	
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 
-		// if 
 		if r.FormValue("q") != "" {
             fmt.Fprintf(w, `
                 <body>
@@ -29,7 +28,7 @@ func main() {
 		`)
 
 	})	
-
-    http.ListenAndServe(":3000", nil)
+    
+	http.ListenAndServe(":3000", nil)
 	// log.Fatal(http.ListenAndServe(":3000", nil))
 }
