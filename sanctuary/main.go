@@ -30,7 +30,11 @@ func main() {
 	practices = append(practices, practice1)
 	practices = append(practices, practice2)
 
+	CompletePractice(practices, 2)
 	ListPractices(practices)
+
+	// fmt.Println(practices[1])
+
 }
 
 func ListPractices(practices []Practice) {
@@ -41,4 +45,17 @@ func ListPractices(practices []Practice) {
 		fmt.Println(practice.Completed)
 		fmt.Println()
 	}
+
+}
+
+func CompletePractice(practices []Practice, id int) {
+
+	for i := 1; i<len(practices); i++ {
+		if practices[i].ID == id {
+			practices[i].Completed = true
+			fmt.Println(practices[i].ID, " transformado em: ", practices[i].Completed)
+			break
+		} else {}
+	}
+
 }
