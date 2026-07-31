@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// GET
 func ListPractices(practices []Practice) {
 
 	for _, practice := range practices {
@@ -13,6 +14,7 @@ func ListPractices(practices []Practice) {
 
 }
 
+// UPDATE
 func CompletePractice(practices []Practice, id int) {
 
 	for i := 1; i<len(practices); i++ {
@@ -23,4 +25,11 @@ func CompletePractice(practices []Practice, id int) {
 		} else {}
 	}
 
+}
+
+// DELETE
+func RemovePractice(practices []Practice, id int) []Practice{
+	
+    	return append(practices[:id], practices[id+1:]...)
+	
 }

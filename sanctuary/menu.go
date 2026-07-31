@@ -29,7 +29,7 @@ func Menu(practices []Practice) {
 			fmt.Println("Enter the name: ")
 
 			var Name string
-			fmt.Scan(&Name)
+			fmt.Scanf("%q", &Name)
 
 			fmt.Println("Enter the frequency: ")
 
@@ -50,7 +50,10 @@ func Menu(practices []Practice) {
 			fmt.Scan(&ID)
 			CompletePractice(practices, ID)
 		case 4:
-			fmt.Println("It is yet to be developed.")
+			var ID int
+			fmt.Println("Enter the pratice ID:")
+			fmt.Scan(&ID)
+			RemovePractice(practices, ID)
 		}
 			
 	}
