@@ -14,17 +14,33 @@ func ListPractices(practices []Practice) {
 
 }
 
+// POST
+func AddPractice(Name string, Frequency string) {
+		
+		var practices []Practice
+
+		practice := Practice{
+			ID: len(practices) + 1, 
+			Name: Name, 
+			Frequency: Frequency, 
+			Completed: false,
+		}
+
+		practices = append(practices, practice)
+}
+
+
 // UPDATE
 func CompletePractice(practices []Practice, id int) {
 
-	for i := 1; i<len(practices); i++ {
+	for i := 0; i<len(practices); i++ {
 		if practices[i].ID == id {
 			practices[i].Completed = true
 			fmt.Println(practices[i].ID, " transformado em: ", practices[i].Completed)
 			break
 		} else {}
 	}
-
+	
 }
 
 // DELETE

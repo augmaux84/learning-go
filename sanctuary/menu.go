@@ -28,7 +28,7 @@ func Menu(practices []Practice) {
 		case 2:
 			fmt.Println("Enter the name: ")
 
-			var Name string
+			var Name string 
 			fmt.Scanf("%q", &Name)
 
 			fmt.Println("Enter the frequency: ")
@@ -36,13 +36,8 @@ func Menu(practices []Practice) {
 			var Frequency string
 			fmt.Scan(&Frequency)
 
-			practice := Practice{
-				ID: len(practices) + 1, 
-				Name: Name, 
-				Frequency: Frequency, 
-				Completed: false}
+			AddPractice(Name, Frequency)
 
-			practices = append(practices, practice)
 			
 		case 3:
 			var ID int
