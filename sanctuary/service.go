@@ -16,16 +16,36 @@ func ListPractices(practices []Practice) {
 
 // POST
 func AddPractice(Name string, Frequency string, practices []Practice) []Practice {
-		
-		practice := Practice{
-			ID: len(practices) + 1, 
-			Name: Name, 
-			Frequency: Frequency, 
-			Completed: false,
+
+		var practice Practice
+
+		if len(practices) == 0 {
+			practice = Practice{
+				ID: len(practices) + 1, 
+				Name: Name, 
+				Frequency: Frequency, 
+				Completed: false,
+		}} else {
+			maxID := practices[len(practices)-1].ID
+			// for i := range practices {
+			// 	if practices[i].ID > maxID {
+			// 		maxID = practices[i].ID
+			// 		break
+			// 	} else {}
+			// }
+
+			practice = Practice{
+				ID: maxID + 1, 
+				Name: Name, 
+				Frequency: Frequency, 
+				Completed: false,
+			}
 		}
 
 		practices = append(practices, practice) 
+		fmt.Println(practices)
 		return practices
+		
 }
 
 
@@ -45,6 +65,14 @@ func CompletePractice(practices []Practice, id int) {
 // DELETE
 func RemovePractice(practices []Practice, id int) []Practice{
 	
-    	return append(practices[:id], practices[id+1:]...)
+	for i := range practices {
+		if practices[i].ID == id {
+			practices = append(practices[:i], practices[i+1:]...)
+			break	
+		} else {}
+	}
+
+	fmt.Println(practices)
+	return practices
 	
 }

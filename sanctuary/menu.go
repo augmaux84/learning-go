@@ -25,6 +25,7 @@ func Menu(practices []Practice) {
 		switch value {
 		case 1:
 			ListPractices(practices)
+
 		case 2:
 			fmt.Println("Enter the name: ")
 			var Name string 
@@ -41,13 +42,13 @@ func Menu(practices []Practice) {
 			fmt.Println("Enter the pratice ID:")
 			fmt.Scan(&ID)
 			CompletePractice(practices, ID)
+			
 		case 4:
 			var ID int
 			fmt.Println("Enter the pratice ID:")
 			fmt.Scan(&ID)
 			
-			practices = RemovePractice(practices, ID)
-			
+			practices = RemovePractice(practices, ID)			
 		}
 			
 	}
