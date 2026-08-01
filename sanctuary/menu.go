@@ -27,18 +27,15 @@ func Menu(practices []Practice) {
 			ListPractices(practices)
 		case 2:
 			fmt.Println("Enter the name: ")
-
 			var Name string 
-			fmt.Scanf("%q", &Name)
+			fmt.Scan(&Name)
 
 			fmt.Println("Enter the frequency: ")
-
 			var Frequency string
 			fmt.Scan(&Frequency)
 
-			AddPractice(Name, Frequency)
+			practices = AddPractice(Name, Frequency, practices)
 
-			
 		case 3:
 			var ID int
 			fmt.Println("Enter the pratice ID:")
@@ -48,7 +45,9 @@ func Menu(practices []Practice) {
 			var ID int
 			fmt.Println("Enter the pratice ID:")
 			fmt.Scan(&ID)
-			RemovePractice(practices, ID)
+			
+			practices = RemovePractice(practices, ID)
+			
 		}
 			
 	}

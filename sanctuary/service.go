@@ -15,10 +15,8 @@ func ListPractices(practices []Practice) {
 }
 
 // POST
-func AddPractice(Name string, Frequency string) {
+func AddPractice(Name string, Frequency string, practices []Practice) []Practice {
 		
-		var practices []Practice
-
 		practice := Practice{
 			ID: len(practices) + 1, 
 			Name: Name, 
@@ -26,7 +24,8 @@ func AddPractice(Name string, Frequency string) {
 			Completed: false,
 		}
 
-		practices = append(practices, practice)
+		practices = append(practices, practice) 
+		return practices
 }
 
 
