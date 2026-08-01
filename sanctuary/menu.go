@@ -2,7 +2,8 @@ package main
 
 import "fmt"
 
-func Menu(practices []Practice) {
+func Menu() {
+	practices := []Practice{}
 
 	for {
 
@@ -42,13 +43,13 @@ func Menu(practices []Practice) {
 			fmt.Println("Enter the pratice ID:")
 			fmt.Scan(&ID)
 			CompletePractice(practices, ID)
-			
+
 		case 4:
 			var ID int
 			fmt.Println("Enter the pratice ID:")
 			fmt.Scan(&ID)
 			
-			practices = RemovePractice(practices, ID)			
+			practices = RemovePractice(practices, ID)
 		}
 			
 	}

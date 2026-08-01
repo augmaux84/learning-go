@@ -2,7 +2,6 @@ package main
 
 func main() {
 
-	practices := []Practice{}
-	Menu(practices) // adjust to Menu()
+	Menu() // adjust to Menu()
 
 }
