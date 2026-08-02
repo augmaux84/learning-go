@@ -43,7 +43,6 @@ func AddPractice(Name string, Frequency string, practices []Practice) []Practice
 		}
 
 		practices = append(practices, practice) 
-		fmt.Println(practices)
 		return practices
 		
 }
@@ -72,7 +71,6 @@ func RemovePractice(practices []Practice, id int) []Practice{
 		} else {}
 	}
 
-	fmt.Println(practices)
 	return practices
 	
 }

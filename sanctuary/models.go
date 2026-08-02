@@ -2,7 +2,7 @@ package main
 
 type Practice struct {
 	ID int
-	Name string
+	Name string 
 	Frequency string
 	Completed bool
 }
